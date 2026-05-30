@@ -21,7 +21,7 @@ const authController = {
         name,
         email,
         password,
-        isSeller: isSeller || false,
+        isSeller: Boolean(isSeller),
       });
 
       if (user) {
