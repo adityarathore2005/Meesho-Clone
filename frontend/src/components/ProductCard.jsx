@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ProductCard = ({ product }) => {
   const { user } = useContext(AuthContext);
 
@@ -11,7 +13,7 @@ const ProductCard = ({ product }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/cart/add', {
+      const response = await fetch(`${API_URL}/api/cart/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
